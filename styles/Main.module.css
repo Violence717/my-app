@@ -1,0 +1,15 @@
+.main {
+    width: max(320px, min(100%, 1120px));
+    display: grid;
+    gap: 2.25em;
+}
+.heading {
+    background: linear-gradient(220deg, #ff5500 25%, #ff55ff 50%, #0fffff 75%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-transform: uppercase;
+    letter-spacing: .15em;
+    font-size: 3.35rem;
+    font-weight: 200;
+    text-align: center;
+}
