@@ -8,9 +8,9 @@ const List = ({ items, checked }) => {
     return (
         <ul className={styles.list}>
             {
-                items.map((item, index) =>
+                items.map((item) =>
                     <Item key={item.index}
-                          index={index + 1}
+                          index={item.index + 1}
                           title={item.title}
                           body={item.body}
                           list={item.list}

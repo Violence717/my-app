@@ -5,6 +5,7 @@ import Main from '../components/Main'
 import styles from '../styles/Home.module.css'
 
 const Home = () => {
+
     const data = [
         {
             index: 0,
@@ -38,7 +39,68 @@ const Home = () => {
                             title: 'Finland',
                             body: 'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.',
                             checked: false,
-                            list: []
+                            list: [
+                                {
+                                    index: 0,
+                                    title: 'Some',
+                                    body: 'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.',
+                                    checked: false,
+                                    list: [
+                                        {
+                                            index: 0,
+                                            title: 'Some',
+                                            body: 'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.',
+                                            checked: false,
+                                            list: [
+                                                {
+                                                    index: 0,
+                                                    title: 'Some',
+                                                    body: 'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.',
+                                                    checked: false,
+                                                    list: [
+                                                        {
+                                                            index: 0,
+                                                            title: 'Some',
+                                                            body: 'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.',
+                                                            checked: false,
+                                                            list: [
+                                                                {
+                                                                    index: 0,
+                                                                    title: 'Some',
+                                                                    body: 'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.',
+                                                                    checked: false,
+                                                                    list: []
+                                                                }
+                                                            ]
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            index: 1,
+                                            title: 'Some',
+                                            body: 'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.',
+                                            checked: false,
+                                            list: []
+                                        },
+                                        {
+                                            index: 2,
+                                            title: 'Some',
+                                            body: 'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.',
+                                            checked: false,
+                                            list: []
+                                        },
+                                        {
+                                            index: 3,
+                                            title: 'Some',
+                                            body: 'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.',
+                                            checked: false,
+                                            list: []
+                                        }
+                                    ]
+                                }
+                            ]
                         }
                     ]
                 }
@@ -72,11 +134,12 @@ const Home = () => {
         <div className={styles.container}>
             <Head>
                 <title>XIX</title>
-                <meta name="description" content="It's multilevel list." />
+                <meta name="description" content="This is a multi-level list." />
             </Head>
             <Main data={data} />
         </div>
     )
+
 }
 
 export default Home

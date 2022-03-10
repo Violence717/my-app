@@ -4,17 +4,16 @@ import List from './List'
 import Checkbox from './Checkbox'
 import Button from './Button'
 
-import Image from 'next/image'
-
 import styles from '../styles/Item.module.css'
 
 const Item = ({ index, title, body, list, checked }) => {
+
     const [visible, setVisible] = useState(false)
     const [status, setStatus] = useState(checked)
 
     return (
         <li className={styles.item}>
-            <div className="">
+            <div>
                 <div className={styles.content}>
                     <h2 className={styles.heading}>{index}. {title}</h2>
                     <p>{body}</p>
@@ -45,6 +44,7 @@ const Item = ({ index, title, body, list, checked }) => {
             }
         </li>
     )
+
 }
 
 export default Item
