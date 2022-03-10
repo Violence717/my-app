@@ -4,7 +4,7 @@ import Item from './Item'
 
 import styles from '../styles/List.module.css'
 
-const List = ({ items }) => {
+const List = ({ items, checked }) => {
     return (
         <ul className={styles.list}>
             {
@@ -14,6 +14,7 @@ const List = ({ items }) => {
                           title={item.title}
                           body={item.body}
                           list={item.list}
+                          checked={checked}
                     />
                 )
             }

@@ -1,5 +1,5 @@
 .main {
-    width: max(320px, min(100%, 1120px));
+    width: max(230px, min(100%, 1120px));
     display: grid;
     gap: 2.25em;
 }

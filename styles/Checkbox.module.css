@@ -1,0 +1,24 @@
+.label {
+    border: .1565em solid #f5f5f5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: fit-content;
+    height: fit-content;
+}
+
+.label:hover {
+    opacity: 75%;
+}
+
+.checkbox {
+    width: 20px;
+    height: 20px;
+    border: 5px solid #050000;
+    appearance: none;
+    cursor: pointer;
+}
+
+.checkbox:checked {
+    background: #f5f5f5;
+}

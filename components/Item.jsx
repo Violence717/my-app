@@ -1,18 +1,16 @@
 import React, { useState } from 'react'
 
 import List from './List'
-import Input from './Input'
+import Checkbox from './Checkbox'
+import Button from './Button'
 
 import Image from 'next/image'
 
 import styles from '../styles/Item.module.css'
 
-import plus from '../images/plus.svg'
-import minus from '../images/minus.svg'
-
-const Item = ({ index, title, body, list }) => {
+const Item = ({ index, title, body, list, checked }) => {
     const [visible, setVisible] = useState(false)
-    const [mark, setMark] = useState(plus)
+    const [status, setStatus] = useState(checked)
 
     return (
         <li className={styles.item}>
@@ -22,20 +20,28 @@ const Item = ({ index, title, body, list }) => {
                     <p>{body}</p>
                 </div>
                 <div className={styles.options}>
-                    <Input />
-                    <Image
-                        onClick={() => {
-                            visible === true ? setVisible(false) : setVisible(true)
-                            mark === plus ? setMark(minus) : setMark(plus)
+                    <Checkbox
+                        checked={status}
+                        changeAction={(event) => {
+                            setStatus(event.target.checked)
+                            console.log(event.target.checked)
                         }}
-                        className={styles.mark}
-                        src={mark}
-                        alt="show list"
+                    />
+                    <Button
+                        clickAction={(event) => {
+                            visible === true
+                                ? setVisible(false)
+                                : setVisible(true)
+                            event.target.childNodes[0].nodeName === '#text'
+                                ? event.target.classList.toggle(styles.position)
+                                : event.target.childNodes[0].classList.toggle(styles.position)
+                        }}
+                        content="⯆"
                     />
                 </div>
             </div>
             {
-                visible ? <List items={list} /> : false
+                visible ? <List items={list} checked={status} /> : false
             }
         </li>
     )
