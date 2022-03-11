@@ -8,7 +8,7 @@ const Main = ({ data }) => {
     return (
         <main className={styles.main}>
             <h1 className={styles.heading}>the world in the XIX century</h1>
-            <List items={data} checked={false} />
+            <List items={data} />
         </main>
     )
 }

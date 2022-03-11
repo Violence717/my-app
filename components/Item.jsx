@@ -9,7 +9,7 @@ import styles from '../styles/Item.module.css'
 const Item = ({ index, title, body, list, checked }) => {
 
     const [visible, setVisible] = useState(false)
-    const [status, setStatus] = useState(checked)
+    const [value, setValue] = useState(checked)
 
     return (
         <li className={styles.item}>
@@ -20,10 +20,13 @@ const Item = ({ index, title, body, list, checked }) => {
                 </div>
                 <div className={styles.options}>
                     <Checkbox
-                        checked={status}
+                        checked={value}
                         changeAction={(event) => {
-                            setStatus(event.target.checked)
-                            console.log(event.target.checked)
+                            list.map(item => {
+                                item.checked = event.target.checked
+                                console.log(item)
+                            })
+                            setValue(event.target.checked)
                         }}
                     />
                     <Button
@@ -40,7 +43,7 @@ const Item = ({ index, title, body, list, checked }) => {
                 </div>
             </div>
             {
-                visible ? <List items={list} checked={status} /> : false
+                visible ? <List items={list} /> : false
             }
         </li>
     )
